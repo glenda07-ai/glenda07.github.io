@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Glenda Deratas - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            binder: {
+              bg: '#EBE3D5',
+              page: '#FAF6F0',
+              spine: '#4A3B32',
+              spineDark: '#382B24',
+              accent: '#C8A882',
+              textPrimary: '#2B231D',
+              textSecondary: '#6E6258',
+              cardBg: '#F3EDE2',
+              border: '#DDD2C3',
+              tagBg: '#EFE8DC',
+            }
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #EBE3D5;
+      color: #2B231D;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .font-serif-heading {
+      font-family: 'Fraunces', Georgia, serif;
+    }
+
+    /* Ring binder spine texture styling */
+    .binder-spine {
+      background: linear-gradient(90deg, #382B24 0%, #524238 40%, #4A3B32 70%, #382B24 100%);
+      box-shadow: inset -4px 0 8px rgba(0,0,0,0.4), inset 4px 0 8px rgba(0,0,0,0.3);
+    }
+
+    .ring-hole {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #382B24;
+      border: 2px solid #C8A882;
+      box-shadow: inset 1px 1px 3px rgba(0,0,0,0.8), 0 1px 2px rgba(255,255,255,0.4);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #EBE3D5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C8A882;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B08D65;
+    }
+  </style>
+</head>
+<body class="h-full w-full overflow-hidden bg-binder-bg text-binder-textPrimary antialiased font-sans text-base">
+
+  <div class="flex h-screen w-screen overflow-hidden">
+
+    <!-- ================= FIXED UNMOVABLE SIDEBAR ================= -->
+    <aside class="w-80 md:w-96 flex-shrink-0 bg-binder-bg border-r border-binder-border flex flex-col justify-between p-6 overflow-y-auto h-full select-none z-20">
+      
+      <div>
+        <!-- Profile Header -->
+        <div class="flex items-center space-x-4 pb-6 border-b border-binder-border/70">
+          <div class="relative w-16 h-16 rounded-full overflow-hidden border-2 border-binder-accent flex-shrink-0 bg-binder-cardBg shadow-sm">
+            <!-- PROFILE IMAGE 1 -->
+            <img src="images/me.jpg" 
+                 onerror="this.src='https://placehold.co/150x150/EBE3D5/3D2D1D?text=Profile'" 
+                 alt="Maria Glenda Deratas" 
+                 class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h1 class="font-serif-heading font-semibold text-2xl md:text-3xl tracking-tight text-binder-textPrimary leading-tight">
+              Maria Glenda<br>Deratas
+            </h1>
+            <p class="text-sm md:text-base text-binder-textSecondary mt-1 leading-normal">
+              Bachelor of Science in Information Technology — 3rd Year
+            </p>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="mt-8 space-y-3.5">
+          <a href="#about" class="flex items-center space-x-3 text-base md:text-lg font-medium text-binder-textPrimary hover:text-amber-800 transition-colors py-2 px-2.5 rounded hover:bg-binder-cardBg/60">
+            <span class="ring-hole inline-block flex-shrink-0"></span>
+            <span class="text-sm text-binder-textSecondary font-mono mr-1">§ 01</span>
+            <span>About</span>
+          </a>
+          <a href="#skills" class="flex items-center space-x-3 text-base md:text-lg font-medium text-binder-textPrimary hover:text-amber-800 transition-colors py-2 px-2.5 rounded hover:bg-binder-cardBg/60">
+            <span class="ring-hole inline-block flex-shrink-0"></span>
+            <span class="text-sm text-binder-textSecondary font-mono mr-1">§ 02</span>
+            <span>Skills</span>
+          </a>
+          <a href="#projects" class="flex items-center space-x-3 text-base md:text-lg font-medium text-binder-textPrimary hover:text-amber-800 transition-colors py-2 px-2.5 rounded hover:bg-binder-cardBg/60">
+            <span class="ring-hole inline-block flex-shrink-0"></span>
+            <span class="text-sm text-binder-textSecondary font-mono mr-1">§ 03</span>
+            <span>Projects</span>
+          </a>
+          <a href="#experience" class="flex items-center space-x-3 text-base md:text-lg font-medium text-binder-textPrimary hover:text-amber-800 transition-colors py-2 px-2.5 rounded hover:bg-binder-cardBg/60">
+            <span class="ring-hole inline-block flex-shrink-0"></span>
+            <span class="text-sm text-binder-textSecondary font-mono mr-1">§ 04</span>
+            <span>Experience & Education</span>
+          </a>
+          <a href="#contact" class="flex items-center space-x-3 text-base md:text-lg font-medium text-binder-textPrimary hover:text-amber-800 transition-colors py-2 px-2.5 rounded hover:bg-binder-cardBg/60">
+            <span class="ring-hole inline-block flex-shrink-0"></span>
+            <span class="text-sm text-binder-textSecondary font-mono mr-1">§ 05</span>
+            <span>Contact</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Footer Info in Sidebar -->
+      <div class="pt-6 border-t border-binder-border/70 text-sm text-binder-textSecondary space-y-1">
+        <p class="uppercase tracking-wider font-mono text-xs">PORTFOLIO · 2026</p>
+        <p>Last updated: September 2026</p>
+      </div>
+
+    </aside>
+
+    <!-- BINDER SPINE SEPARATOR -->
+    <div class="w-7 md:w-9 binder-spine flex-shrink-0 flex flex-col justify-around items-center py-10 z-10">
+      <div class="ring-hole"></div>
+      <div class="ring-hole"></div>
+      <div class="ring-hole"></div>
+      <div class="ring-hole"></div>
+      <div class="ring-hole"></div>
+      <div class="ring-hole"></div>
+    </div>
+
+    <!-- ================= MAIN CONTENT AREA (SCROLLABLE) ================= -->
+    <main class="flex-1 bg-binder-page overflow-y-auto h-full p-8 md:p-14 lg:p-16 space-y-20 scroll-smooth">
+
+      <!-- SECTION 01: ABOUT -->
+      <section id="about" class="pt-2">
+        <div class="flex items-center justify-between border-b border-binder-border pb-3 mb-8">
+          <span class="text-base font-mono text-binder-textSecondary">§ 01</span>
+          <span class="text-xs uppercase tracking-widest text-binder-textSecondary font-mono">PORTFOLIO · 2026</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-8 space-y-6">
+            <h1 class="font-serif-heading text-6xl md:text-7xl lg:text-8xl font-normal text-binder-textPrimary leading-none">
+              Maria <br>
+              <span class="italic">Glenda</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl font-serif text-binder-textPrimary/90 leading-relaxed pt-2">
+              Third-year IT student dedicated to building clear, intuitive, and practical web applications step by step.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 text-base text-binder-textSecondary font-mono pt-1">
+              <span>• BS Information Technology</span>
+              <span>• Year 3 · Semester 1</span>
+              <span>• Manila, PH</span>
+            </div>
+
+            <div class="border-t border-binder-border pt-8 mt-8 space-y-6 text-lg md:text-xl text-binder-textPrimary/85 leading-relaxed font-sans">
+              <h2 class="font-serif-heading text-3xl md:text-4xl text-binder-textPrimary font-normal mb-3">About Me</h2>
+              <p>
+                Hello! I am Maria Glenda Deratas, a passionate 3rd-year Information Technology student. My passion lies in constructing clean, reliable, and user-friendly web applications that solve practical everyday problems. I enjoy working on the entire cycle of a project—from designing structured front-end layouts to engineering robust server-side logical flows and database relations.
+              </p>
+              <p>
+                Throughout my academic journey, I have actively developed my skills in step-by-step full-stack web development. I place strong emphasis on writing readable code, crafting predictable database schemas, and ensuring that user interfaces are straightforward and intuitive for non-technical users.
+              </p>
+              <p>
+                My goal is to continually enhance my software engineering capabilities, participate in real-world collaborative web projects, and learn modern frameworks and best practices alongside experienced developers and peers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Hero Avatar -->
+          <div class="lg:col-span-4 flex flex-col items-center justify-center pt-4">
+            <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-binder-accent p-1 bg-binder-cardBg shadow-md">
+              <!-- PROFILE IMAGE 2 -->
+              <img src="images/me.jpg" 
+                   onerror="this.src='https://placehold.co/300x300/EBE3D5/3D2D1D?text=Maria+Glenda'" 
+                   alt="Maria Glenda" 
+                   class="w-full h-full object-cover rounded-full">
+            </div>
+            <p class="text-sm font-mono text-binder-textSecondary mt-3">maria.glenda</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 02: SKILLS -->
+      <section id="skills" class="pt-10 border-t border-binder-border">
+        <div class="flex items-center justify-between border-b border-binder-border pb-3 mb-8">
+          <span class="text-base font-mono text-binder-textSecondary">§ 02</span>
+          <h2 class="font-serif-heading text-4xl md:text-5xl text-binder-textPrimary font-normal">Skills</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Frontend Card -->
+          <div class="bg-binder-cardBg p-6 md:p-7 rounded-lg border border-binder-border shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif-heading text-3xl text-binder-textPrimary mb-2">Frontend Development</h3>
+              <p class="text-base text-binder-textSecondary mb-6 leading-relaxed">Designing clean, responsive, and mobile-friendly user interfaces with semantic standards and utility CSS frameworks.</p>
+              
+              <div class="space-y-2">
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">HTML5</span>
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">CSS3</span>
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">JavaScript</span>
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">Tailwind CSS</span>
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Card -->
+          <div class="bg-binder-cardBg p-6 md:p-7 rounded-lg border border-binder-border shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif-heading text-3xl text-binder-textPrimary mb-2">Backend & Database</h3>
+              <p class="text-base text-binder-textSecondary mb-6 leading-relaxed">Building server-side application logic, structured database queries, user authorization, and data processing API endpoints.</p>
+              
+              <div class="space-y-2">
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">PHP</span>
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">Laravel Framework</span>
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">MySQL</span>
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">XAMPP</span>
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">REST APIs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Database Card -->
+          <div class="bg-binder-cardBg p-6 md:p-7 rounded-lg border border-binder-border shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif-heading text-3xl text-binder-textPrimary mb-2">Tools & Environments</h3>
+              <p class="text-base text-binder-textSecondary mb-6 leading-relaxed">Utilizing modern developer tools for code editing, version control, API testing, and continuous project collaboration.</p>
+              
+              <div class="space-y-2">
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">VS Code</span>
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">Git</span>
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">GitHub</span>
+                <span class="inline-block bg-binder-tagBg text-binder-textPrimary text-base font-mono px-3.5 py-1.5 rounded border border-binder-border/70 mr-1 mb-2">Postman</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 03: PROJECTS -->
+      <section id="projects" class="pt-10 border-t border-binder-border">
+        <div class="flex items-center justify-between border-b border-binder-border pb-3 mb-8">
+          <span class="text-base font-mono text-binder-textSecondary">§ 03</span>
+          <h2 class="font-serif-heading text-4xl md:text-5xl text-binder-textPrimary font-normal">Projects</h2>
+        </div>
+
+        <div class="space-y-12">
+
+          <!-- Project 1 -->
+          <div class="bg-binder-cardBg rounded-xl border border-binder-border p-6 md:p-8 lg:p-10 shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+              <div class="lg:col-span-6 flex flex-col justify-between space-y-5">
+                <div class="space-y-4">
+                  <div>
+                    <h3 class="font-serif-heading text-3xl md:text-4xl text-binder-textPrimary font-semibold">Recipe Book Web-App</h3>
+                    <p class="text-base font-mono text-binder-textSecondary mt-1">Full-Stack Web Application</p>
+                  </div>
+
+                  <p class="text-lg md:text-xl text-binder-textPrimary/85 leading-relaxed font-sans">
+                    A comprehensive web application developed for storing, managing, and browsing culinary recipes. The platform provides an intuitive dashboard for administrators to perform full CRUD operations—creating new culinary entries, editing existing instructions, uploading dish photos, and removing outdated recipes. 
+                  </p>
+                  <p class="text-base md:text-lg text-binder-textPrimary/80 leading-relaxed font-sans">
+                    For visitors, the system features categorized dish listings, ingredient filter options, and a curated "top-selling dishes" section that dynamically updates based on popular view metrics and order requests.
+                  </p>
+                </div>
+
+                <div class="space-y-4 pt-2">
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-2.5">
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">PHP</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">LARAVEL</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">MYSQL</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">HTML</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">CSS</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">JAVASCRIPT</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">XAMPP</span>
+                  </div>
+
+                  <!-- Action Links -->
+                  <div class="flex items-center space-x-4 pt-1 text-base font-mono">
+                    <a href="#" class="inline-flex items-center space-x-1 border border-binder-textPrimary/40 px-4 py-2 rounded hover:bg-binder-bg transition-colors text-binder-textPrimary">
+                      <span>Live site ↗</span>
+                    </a>
+                    <a href="#" class="inline-flex items-center space-x-1 border border-binder-textPrimary/40 px-4 py-2 rounded hover:bg-binder-bg transition-colors text-binder-textPrimary">
+                      <span>GitHub ↗</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Image 1 - Expanded Large Container -->
+              <div class="lg:col-span-6 flex">
+                <div class="w-full min-h-[320px] md:min-h-[420px] rounded-lg overflow-hidden border border-binder-border shadow-md bg-stone-900 flex">
+                  <!-- PROJECT IMAGE 1 -->
+                  <img src="images/project1.jpg" 
+                       onerror="this.src='https://placehold.co/800x600/3D2D1D/FAF6F0?text=Recipe+Book+Web-App'" 
+                       alt="Recipe Book Web-App" 
+                       class="w-full h-full object-cover">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="bg-binder-cardBg rounded-xl border border-binder-border p-6 md:p-8 lg:p-10 shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+              <div class="lg:col-span-6 flex flex-col justify-between space-y-5">
+                <div class="space-y-4">
+                  <div>
+                    <h3 class="font-serif-heading text-3xl md:text-4xl text-binder-textPrimary font-semibold">Event Announcement Board</h3>
+                    <p class="text-base font-mono text-binder-textSecondary mt-1">Academic Web Application</p>
+                  </div>
+
+                  <p class="text-lg md:text-xl text-binder-textPrimary/85 leading-relaxed font-sans">
+                    A centralized digital bulletin board designed for campus events and departmental announcements. The platform organizes notices into distinct tabs for upcoming activities and past archives, helping students and staff keep track of essential university schedules.
+                  </p>
+                  <p class="text-base md:text-lg text-binder-textPrimary/80 leading-relaxed font-sans">
+                    Includes date-based filtering, quick keyword searching, interactive detail popups, and an admin management interface to post, schedule, and categorize campus notices efficiently.
+                  </p>
+                </div>
+
+                <div class="space-y-4 pt-2">
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-2.5">
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">LARAVEL</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">PHP</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">MYSQL</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">JAVASCRIPT</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">HTML</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">CSS</span>
+                    <span class="bg-binder-tagBg text-binder-textPrimary text-sm font-mono px-3.5 py-1 rounded border border-binder-border">XAMPP</span>
+                  </div>
+
+                  <!-- Action Links -->
+                  <div class="flex items-center space-x-4 pt-1 text-base font-mono">
+                    <a href="#" class="inline-flex items-center space-x-1 border border-binder-textPrimary/40 px-4 py-2 rounded hover:bg-binder-bg transition-colors text-binder-textPrimary">
+                      <span>Live site ↗</span>
+                    </a>
+                    <a href="#" class="inline-flex items-center space-x-1 border border-binder-textPrimary/40 px-4 py-2 rounded hover:bg-binder-bg transition-colors text-binder-textPrimary">
+                      <span>GitHub ↗</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Image 2 - Expanded Large Container -->
+              <div class="lg:col-span-6 flex">
+                <div class="w-full min-h-[320px] md:min-h-[420px] rounded-lg overflow-hidden border border-binder-border shadow-md bg-stone-900 flex">
+                  <!-- PROJECT IMAGE 2 -->
+                  <img src="images/project2.jpg" 
+                       onerror="this.src='https://placehold.co/800x600/3D2D1D/FAF6F0?text=Event+Announcement+Board'" 
+                       alt="Event Announcement Board" 
+                       class="w-full h-full object-cover">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 04: EXPERIENCE & EDUCATION -->
+      <section id="experience" class="pt-10 border-t border-binder-border">
+        <div class="flex items-center justify-between border-b border-binder-border pb-3 mb-8">
+          <span class="text-base font-mono text-binder-textSecondary">§ 04</span>
+          <h2 class="font-serif-heading text-4xl md:text-5xl text-binder-textPrimary font-normal">Experience & Education</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+          <!-- Experience Column -->
+          <div class="space-y-8">
+            <h3 class="font-serif-heading text-3xl text-binder-textPrimary border-b border-binder-border pb-2">Experience</h3>
+
+            <!-- Student Dev Experience 1 -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-baseline">
+                <h4 class="font-serif-heading text-2xl text-binder-textPrimary font-semibold">Student Web Developer</h4>
+                <span class="text-sm font-mono text-binder-textSecondary">2023 – Present</span>
+              </div>
+              <p class="text-base font-mono text-binder-textSecondary">School Projects & Personal Exploration</p>
+              <ul class="text-lg text-binder-textPrimary/85 space-y-2 list-disc list-inside font-sans pt-1 leading-relaxed">
+                <li>Engineered custom full-stack web applications and data management platforms utilizing PHP, Laravel, MySQL, and JavaScript.</li>
+                <li>Designed clean, responsive, and mobile-friendly front-end interfaces using modern CSS frameworks like Tailwind CSS and Bootstrap.</li>
+                <li>Configured and maintained local web server environments, database tables, and relational schemas using XAMPP for development and testing.</li>
+              </ul>
+            </div>
+
+            <!-- Student Dev Experience 2 -->
+            <div class="space-y-2 pt-4">
+              <div class="flex justify-between items-baseline">
+                <h4 class="font-serif-heading text-2xl text-binder-textPrimary font-semibold">Academic System & Laboratory Work</h4>
+                <span class="text-sm font-mono text-binder-textSecondary">2023 – Present</span>
+              </div>
+              <p class="text-base font-mono text-binder-textSecondary">IT Coursework & Team Assignments</p>
+              <ul class="text-lg text-binder-textPrimary/85 space-y-2 list-disc list-inside font-sans pt-1 leading-relaxed">
+                <li>Collaborated in student development teams to analyze system requirements, design data models, and construct functional software solutions.</li>
+                <li>Performed systematic debugging, routine functionality testing, and interface refinements to improve usability across devices.</li>
+                <li>Utilized Git and GitHub for version control, code sharing, and issue tracking during group course deliverables.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Education Column -->
+          <div class="space-y-8">
+            <h3 class="font-serif-heading text-3xl text-binder-textPrimary border-b border-binder-border pb-2">Education</h3>
+
+            <!-- Edu 1 -->
+            <div class="space-y-2">
+              <div class="flex justify-between items-baseline">
+                <h4 class="font-serif-heading text-2xl text-binder-textPrimary font-semibold">BS Information Technology</h4>
+                <span class="text-sm font-mono text-binder-textSecondary">2023 – Present</span>
+              </div>
+              <p class="text-base font-mono text-binder-textSecondary">Polytechnic University of the Philippines</p>
+              <ul class="text-lg text-binder-textPrimary/85 space-y-2 list-disc list-inside font-sans pt-1 leading-relaxed">
+                <li>Currently enrolled in 3rd Year, 1st Semester.</li>
+                <li>Key coursework includes Web Systems Development, Database Management, Object-Oriented Programming, and Systems Analysis & Design.</li>
+                <li>Focused on mastering web development standards and full-stack architecture using PHP and Laravel.</li>
+              </ul>
+            </div>
+
+            <!-- Edu 2 -->
+            <div class="space-y-2 pt-4">
+              <div class="flex justify-between items-baseline">
+                <h4 class="font-serif-heading text-2xl text-binder-textPrimary font-semibold">Senior High School — STEM Track</h4>
+                <span class="text-sm font-mono text-binder-textSecondary">2021 – 2023</span>
+              </div>
+              <p class="text-base font-mono text-binder-textSecondary">Manila Science High School</p>
+              <ul class="text-lg text-binder-textPrimary/85 space-y-2 list-disc list-inside font-sans pt-1 leading-relaxed">
+                <li>Graduated with Academic Honors.</li>
+                <li>Gained strong foundation in algorithmic thinking, basic computer programming concepts, and mathematical problem-solving.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 05: CONTACT -->
+      <section id="contact" class="pt-10 border-t border-binder-border pb-12">
+        <div class="flex items-center justify-between border-b border-binder-border pb-3 mb-8">
+          <span class="text-base font-mono text-binder-textSecondary">§ 05</span>
+          <h2 class="font-serif-heading text-4xl md:text-5xl text-binder-textPrimary font-normal">Get in Touch</h2>
+        </div>
+
+        <div class="max-w-2xl space-y-6">
+          <p class="text-xl md:text-2xl font-serif text-binder-textPrimary/90 leading-relaxed">
+            I am always open to learning opportunities, collaborative academic projects, and tech industry discussions. Feel free to reach out to me!
+          </p>
+
+          <div class="space-y-3.5 pt-4">
+            
+            <a href="mailto:mariaglenda.dev@gmail.com" class="flex items-center justify-between p-4.5 md:p-5 bg-binder-cardBg rounded-lg border border-binder-border hover:border-binder-accent transition-colors group">
+              <span class="font-mono text-lg md:text-xl text-binder-textPrimary group-hover:text-amber-900">mariaglenda.dev@gmail.com</span>
+              <span class="text-sm font-mono uppercase text-binder-textSecondary">EMAIL ↗</span>
+            </a>
+
+            <a href="https://github.com/mariaglenda" target="_blank" class="flex items-center justify-between p-4.5 md:p-5 bg-binder-cardBg rounded-lg border border-binder-border hover:border-binder-accent transition-colors group">
+              <span class="font-mono text-lg md:text-xl text-binder-textPrimary group-hover:text-amber-900">github.com/mariaglenda</span>
+              <span class="text-sm font-mono uppercase text-binder-textSecondary">GITHUB ↗</span>
+            </a>
+
+            <a href="https://linkedin.com/in/mariaglenda" target="_blank" class="flex items-center justify-between p-4.5 md:p-5 bg-binder-cardBg rounded-lg border border-binder-border hover:border-binder-accent transition-colors group">
+              <span class="font-mono text-lg md:text-xl text-binder-textPrimary group-hover:text-amber-900">linkedin.com/in/mariaglenda</span>
+              <span class="text-sm font-mono uppercase text-binder-textSecondary">LINKEDIN ↗</span>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
